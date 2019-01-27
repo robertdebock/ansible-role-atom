@@ -32,7 +32,7 @@
 
 - name: install atom rpm
   dnf:
-    name: "/tmp/{{ atom_package }}"
+    deb: "/tmp/{{ atom_package }}"
     state: "{{ atom_package_state }}"
   register: atom_install_atom_rpm
   until: atom_install_atom_rpm is succeeded
