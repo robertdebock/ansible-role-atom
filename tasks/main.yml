@@ -30,19 +30,28 @@
     - ansible_pkg_mgr == "yum" or
       ansible_pkg_mgr == "dnf"
 
-- name: install atom rpm
+- name: install atom rpm dnf
   dnf:
     name: "/tmp/{{ atom_package }}"
     state: "{{ atom_package_state }}"
-  register: atom_install_atom_rpm
-  until: atom_install_atom_rpm is succeeded
+  register: atom_install_atom_rpm_dnf
+  until: atom_install_atom_rpm_dnf is succeeded
   retries: 3
   when:
-    - ansible_pkg_mgr == "yum" or
-      ansible_pkg_mgr == "dnf"
+    - ansible_pkg_mgr == "dnf"
+
+- name: install atom rpm yum
+  yum:
+    name: "/tmp/{{ atom_package }}"
+    state: "{{ atom_package_state }}"
+  register: atom_install_atom_rpm_yum
+  until: atom_install_atom_rpm_yum is succeeded
+  retries: 3
+  when:
+    - ansible_pkg_mgr == "yum"
 
 - name: install atom deb
-  package:
+  apt:
     deb: "/tmp/{{ atom_package }}"
     state: "{{ atom_package_state }}"
   register: atom_install_atom_deb
