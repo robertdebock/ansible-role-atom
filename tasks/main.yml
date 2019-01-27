@@ -1,0 +1,49 @@
+---
+# tasks file for atom
+- name: test veriables and environment
+  assert:
+    that:
+      - atom_package_state is defined
+      - atom_package_state == "present" or
+        atom_package_state == "latest" or
+        atom_package_state == "absent"
+      - ansible_pkg_mgr == "yum" or
+        ansible_pkg_mgr == "dnf" or
+        ansible_pkg_mgr == "apt"
+
+- name: install requirements
+  package:
+    name: "{{ atom_requirements }}"
+    state: "{{ atom_package_state }}"
+  when:
+    - atom_requirements is defined
+    - ansible_pkg_mgr == "apt"
+
+- name: download atom rpm
+  get_url:
+    url: "{{ atom_package_url }}"
+    dest: "/tmp/{{ atom_package }}"
+  when:
+    - ansible_pkg_mgr == "yum" or
+      ansible_pkg_mgr == "dnf"
+
+- name: install atom rpm
+  dnf:
+    name: "/tmp/{{ atom_package }}"
+    state: "{{ atom_package_state }}"
+  register: atom_install_atom_rpm
+  until: atom_install_atom_rpm is succeeded
+  retries: 3
+  when:
+    - ansible_pkg_mgr == "yum" or
+      ansible_pkg_mgr == "dnf"
+
+- name: install atom
+  package:
+    name: "{{ atom_package_url }}"
+    state: "{{ atom_package_state }}"
+  register: atom_install_atom
+  until: atom_install_atom is succeeded
+  retries: 3
+  when:
+    - ansible_pkg_mgr == "apt"
