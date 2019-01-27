@@ -67,10 +67,10 @@ This role has been tested against the following distributions and Ansible versio
 
 |distribution|ansible 2.6|ansible 2.7|ansible devel|
 |------------|-----------|-----------|-------------|
-|alpine-edge*|yes|yes|yes*|
-|alpine-latest|yes|yes|yes*|
-|archlinux|yes|yes|yes*|
-|centos-6|yes|yes|yes*|
+|alpine-edge*|no|no|no*|
+|alpine-latest|no|no|no*|
+|archlinux|no|no|no*|
+|centos-6|no|no|no*|
 |centos-latest|yes|yes|yes*|
 |debian-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
