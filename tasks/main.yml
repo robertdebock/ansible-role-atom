@@ -68,6 +68,7 @@
   zypper:
     name: "/tmp/{{ atom_package }}"
     state: "{{ atom_package_state }}"
+    disable_gpg_check: yes
   register: atom_install_atom_rpm_zypper
   until: atom_install_atom_rpm_zypper is succeeded
   retries: 3
