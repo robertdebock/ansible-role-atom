@@ -22,6 +22,9 @@
   when:
     - atom_requirements is defined
     - ansible_pkg_mgr == "apt"
+  register: atom_install_requirements
+  until: atom_install_requirements is succeeded
+  retries: 3
 
 - name: download atom
   get_url:
@@ -33,6 +36,9 @@
       ansible_pkg_mgr == "dnf" or
       ansible_pkg_mgr == "yum" or
       ansible_pkg_mgr == "zypper"
+  register: atom_download_atom
+  until: atom_download_atom is succeeded
+  retries: 3
 
 - name: install atom deb
   apt:
