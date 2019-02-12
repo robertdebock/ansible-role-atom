@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: atom-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: atom-ubuntu-artful
-    image: ubuntu:artful
+  - name: atom-ubuntu-latest
+    image: ubuntu:latest
+  - name: atom-ubuntu-rolling
+    image: ubuntu:rolling
   - name: atom-ubuntu-devel
     image: ubuntu:devel
 provisioner:
