@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: atom-opensuse-leap
     image: opensuse:leap
-  - name: atom-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: atom-ubuntu-latest
     image: ubuntu:latest
   - name: atom-ubuntu-rolling
