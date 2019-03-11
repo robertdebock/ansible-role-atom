@@ -19,7 +19,6 @@ This example is taken from `molecule/default/playbook.yml`:
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.atom
-
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -34,7 +33,6 @@ These variables are set in `defaults/main.yml`:
 
 # To update packages this role places on the system, set `atom_package_state` to `latest`.
 atom_package_state: present
-
 ```
 
 Requirements
