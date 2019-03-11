@@ -18,7 +18,7 @@
 - name: install requirements
   package:
     name: "{{ atom_requirements }}"
-    state: "{{ atom_package_state }}"
+    state: present
   when:
     - atom_requirements is defined
     - ansible_pkg_mgr == "apt"
@@ -43,7 +43,7 @@
 - name: install atom deb
   apt:
     deb: "/tmp/{{ atom_package }}"
-    state: "{{ atom_package_state }}"
+    state: present
   register: atom_install_atom_deb
   until: atom_install_atom_deb is succeeded
   retries: 3
@@ -53,7 +53,7 @@
 - name: install atom rpm dnf
   dnf:
     name: "/tmp/{{ atom_package }}"
-    state: "{{ atom_package_state }}"
+    state: present
   register: atom_install_atom_rpm_dnf
   until: atom_install_atom_rpm_dnf is succeeded
   retries: 3
@@ -63,7 +63,7 @@
 - name: install atom rpm yum
   yum:
     name: "/tmp/{{ atom_package }}"
-    state: "{{ atom_package_state }}"
+    state: present
   register: atom_install_atom_rpm_yum
   until: atom_install_atom_rpm_yum is succeeded
   retries: 3
@@ -73,7 +73,7 @@
 - name: install atom rpm zypper
   zypper:
     name: "/tmp/{{ atom_package }}"
-    state: "{{ atom_package_state }}"
+    state: present
     disable_gpg_check: yes
   register: atom_install_atom_rpm_zypper
   until: atom_install_atom_rpm_zypper is succeeded

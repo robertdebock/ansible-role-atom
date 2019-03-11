@@ -30,9 +30,6 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for atom
-
-# To update packages this role places on the system, set `atom_package_state` to `latest`.
-atom_package_state: present
 ```
 
 Requirements
