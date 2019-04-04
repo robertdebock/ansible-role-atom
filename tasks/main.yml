@@ -40,9 +40,6 @@
   apt:
     deb: "/tmp/{{ atom_package }}"
     state: present
-  register: atom_install_atom_deb
-  until: atom_install_atom_deb is succeeded
-  retries: 3
   when:
     - ansible_pkg_mgr == "apt"
 
@@ -50,9 +47,6 @@
   dnf:
     name: "/tmp/{{ atom_package }}"
     state: present
-  register: atom_install_atom_rpm_dnf
-  until: atom_install_atom_rpm_dnf is succeeded
-  retries: 3
   when:
     - ansible_pkg_mgr == "dnf"
 
@@ -60,9 +54,6 @@
   yum:
     name: "/tmp/{{ atom_package }}"
     state: present
-  register: atom_install_atom_rpm_yum
-  until: atom_install_atom_rpm_yum is succeeded
-  retries: 3
   when:
     - ansible_pkg_mgr == "yum"
 
@@ -71,8 +62,5 @@
     name: "/tmp/{{ atom_package }}"
     state: present
     disable_gpg_check: yes
-  register: atom_install_atom_rpm_zypper
-  until: atom_install_atom_rpm_zypper is succeeded
-  retries: 3
   when:
     - ansible_pkg_mgr == "zypper"
