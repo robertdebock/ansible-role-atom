@@ -6,6 +6,9 @@ atom
 
 Install atom on your system.
 
+<img src="https://img.shields.io/ansible/role/d/36572"/>
+<img src="https://img.shields.io/ansible/quality/36572"/>
+
 Example Playbook
 ----------------
 
@@ -62,7 +65,6 @@ This role uses the following modules:
 ```yaml
 ---
 - apt
-- assert
 - dnf
 - get_url
 - package
