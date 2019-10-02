@@ -92,7 +92,7 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-latest|yes|yes|yes*|
 |archlinux|yes|yes|yes*|
 |centos-6|no|no|no*|
-|centos-latest|no|yes|yes*|
+|centos-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|yes|yes|yes*|
 |fedora-latest|yes|yes|yes*|
