@@ -1,4 +1,0 @@
----
-exceptions:
-  - variation: CentOS 6
-    reason: SNI is not supported.
