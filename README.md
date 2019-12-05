@@ -101,7 +101,6 @@ Some variarations of the build matrix do not work. These are the variations and 
 | amazonlinux:1 | Package: atom ... Requires: libsecret-1.so.0 ... and ... polkit |
 
 
-
 Testing
 -------
 
