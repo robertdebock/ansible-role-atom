@@ -15,6 +15,7 @@
   get_url:
     url: "{{ atom_package_url }}"
     dest: "/tmp/{{ atom_package }}"
+    checksum: "{{ atom_checksum }}"
     validate_certs: no
   when:
     - ansible_pkg_mgr == "apt" or
@@ -31,6 +32,9 @@
     state: present
   when:
     - ansible_pkg_mgr == "apt"
+  register: atom_intall_atom_deb
+  until: atom_intall_atom_deb is succeeded
+  retries: 3
 
 - name: install atom rpm dnf
   dnf:
@@ -38,6 +42,9 @@
     state: present
   when:
     - ansible_pkg_mgr == "dnf"
+  register: atom_install_atom_rpm_dnf
+  until: atom_install_atom_rpm_dnf is succeeded
+  retries: 3
 
 - name: install atom rpm yum
   yum:
@@ -45,6 +52,9 @@
     state: present
   when:
     - ansible_pkg_mgr == "yum"
+  register: atom_install_atom_rpm_yum
+  until: atom_install_atom_rpm_yum is succeeded
+  retries: 3
 
 - name: install atom rpm zypper
   zypper:
@@ -53,3 +63,15 @@
     disable_gpg_check: yes
   when:
     - ansible_pkg_mgr == "zypper"
+  register: atom_install_atom_rpm_zypper
+  until: atom_install_atom_rpm_zypper is succeeded
+  retries: 3
+
+- name: install apm packages
+  command: apm install {{ item }}
+  args:
+    creates: /root/.atom/packages/linter
+  loop: "{{ atom_apm_packages }}"
+  register: atom_install_apm_packages
+  until: atom_install_apm_packages is succeeded
+  retries: 3
