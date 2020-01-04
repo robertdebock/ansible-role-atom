@@ -79,7 +79,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |---------|----|
 |amazon|Candidate|
 |alpine|all|
-|archlinux|all|
 |debian|all|
 |fedora|all|
 |opensuse|all|
