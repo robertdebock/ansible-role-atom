@@ -30,7 +30,6 @@ jobs:
       matrix:
         image:
           - amazonlinux
-          - alpine
           - debian
           - fedora
           - opensuse

@@ -84,7 +84,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |container|tags|
 |---------|----|
 |amazon|Candidate|
-|alpine|all|
 |debian|all|
 |fedora|all|
 |opensuse|all|
