@@ -10,15 +10,11 @@ _atom_package:
   apt:
     url: 'https://atom.io/download/deb'
     name: atom-amd64.deb
-  dnf:
+  dnf: &rpmpackage
     url: 'https://atom.io/download/rpm'
     name: atom.x86_64.rpm
-  yum:
-    url: 'https://atom.io/download/rpm'
-    name: atom.x86_64.rpm
-  zypper:
-    url: 'https://atom.io/download/rpm'
-    name: atom.x86_64.rpm
+  yum: *rpmpackage
+  zypper: *rpmpackage
 
 atom_package_url: '{{ _atom_package[ansible_pkg_mgr]["url"] }}'
 atom_package: "{{ _atom_package[ansible_pkg_mgr]['name'] }}"
@@ -27,9 +23,9 @@ atom_package: "{{ _atom_package[ansible_pkg_mgr]['name'] }}"
 # role on second runs as it calculates the (local) checksum and uses the results
 # to see if the artifact would need to be downloaded again.
 _atom_checksum:
-  dnf: "sha256:b11c6e6e176c753f11b62c5ddcee3e9b098b822a7e9bd77cb8e560437221dad2"
-  yum: "sha256:b11c6e6e176c753f11b62c5ddcee3e9b098b822a7e9bd77cb8e560437221dad2"
-  zypper: "sha256:b11c6e6e176c753f11b62c5ddcee3e9b098b822a7e9bd77cb8e560437221dad2"
-  apt: "sha256:5e9a487da9d7d6530be61d4af2454b0bcfc907537447cf9d0423766e91282ac7"
+  dnf: &rpmchecksum "sha256:1011ce47f7e58105d186a54c03755b1cce9e5584b1eb980ed0812c7c53845944"
+  yum: *rpmchecksum
+  zypper: *rpmchecksum
+  apt: "sha256:ce3af452301b6ad45ee0abf340e497f8778f6fae114be9e455a305045ab3a037"
 
 atom_checksum: "{{ _atom_checksum[ansible_pkg_mgr] }}"
