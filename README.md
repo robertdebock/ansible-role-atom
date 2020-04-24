@@ -87,7 +87,7 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tags|
 |---------|----|
-|debian|all|
+|debian|buster|
 |fedora|all|
 |opensuse|all|
 |ubuntu|bionic|
@@ -105,6 +105,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | variation                 | reason                 |
 |---------------------------|------------------------|
 | amazonlinux:1 | Package: atom ... Requires: libsecret-1.so.0 ... and ... polkit |
+| debian:bullseye | An error occurred during the test sequence action: 'idempotence'. Cleaning up. |
 
 
 ## Testing
