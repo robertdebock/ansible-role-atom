@@ -2,9 +2,9 @@
 
 Install atom on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-atom.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-atom)|[![github](https://github.com/robertdebock/ansible-role-atom/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-atom/actions)|[![quality](https://img.shields.io/ansible/quality/36572)](https://galaxy.ansible.com/robertdebock/atom)|[![downloads](https://img.shields.io/ansible/role/d/36572)](https://galaxy.ansible.com/robertdebock/atom)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-atom.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-atom)|[![github](https://github.com/robertdebock/ansible-role-atom/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-atom/actions)|[![quality](https://img.shields.io/ansible/quality/36572)](https://galaxy.ansible.com/robertdebock/atom)|[![downloads](https://img.shields.io/ansible/role/d/36572)](https://galaxy.ansible.com/robertdebock/atom)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-atom.svg)](https://github.com/robertdebock/ansible-role-atom/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
