@@ -5,5 +5,4 @@
       - atom_apm_packages | length > 0
       - atom_apm_packages is iterable
   when:
-    - x is defined
-
+    - atom_apm_packages is defined
