@@ -1,5 +1,6 @@
 ---
 # vars file for atom
+
 _atom_requirements:
   apt:
     - apt-transport-https

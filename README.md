@@ -53,6 +53,7 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for atom
+
 # What apm packages (https://atom.io/packages) to install.
 atom_apm_packages:
   - linter
