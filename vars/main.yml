@@ -24,9 +24,9 @@ atom_package: "{{ _atom_package[ansible_pkg_mgr]['name'] }}"
 # role on second runs as it calculates the (local) checksum and uses the results
 # to see if the artifact would need to be downloaded again.
 _atom_checksum:
-  dnf: &rpmchecksum "sha256:bfcba783113e9cbcfb750d7577318a55d9171cce16ad6ca897b4de32204dd97b"
+  dnf: &rpmchecksum "sha256:edf5ee832cc8fa0e3c77d534b2c454b0f8f6ce3c1237ec8cb8817c99e9a216d3"
   yum: *rpmchecksum
   zypper: *rpmchecksum
-  apt: "sha256:7099181a9a8616de9b1b8e220ad7ea07c2a2208a30ea8b56464bf6587805a7e5"
+  apt: "sha256:c1614e85612cc5fa7fb8301c3bbfec294f198bf6585d1fa1076e1f1c4db053c0"
 
 atom_checksum: "{{ _atom_checksum[ansible_pkg_mgr] }}"
