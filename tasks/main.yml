@@ -30,6 +30,13 @@
   when:
     - ansible_pkg_mgr == "apt"
 
+- name: install atom rpm key
+  rpm_key:
+    key: "https://packagecloud.io/AtomEditor/atom/gpgkey"
+    state: present
+  when:
+    - ansible_pkg_mgr in [ "dnf", "yum", "zypper" ]
+
 - name: install atom rpm dnf
   dnf:
     name: "/tmp/{{ atom_package }}"
