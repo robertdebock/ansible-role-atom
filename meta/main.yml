@@ -30,6 +30,6 @@ galaxy_info:
 
   galaxy_tags:
     - atom
-    - centos
+    - ide
 
 dependencies: []
