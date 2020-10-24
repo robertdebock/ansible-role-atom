@@ -87,7 +87,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|el|7, 8|
+|el|8|
 |debian|buster|
 |fedora|31, 32|
 |opensuse|all|
@@ -107,6 +107,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 |---------------------------|------------------------|
 | amazonlinux:1 | Package: atom ... Requires: libsecret-1.so.0 ... and ... polkit |
 | debian:bullseye | An error occurred during the test sequence action: 'idempotence'. Cleaning up. |
+| centos:7 | /lib64/libstdc++.so.6: version `CXXABI_1.3.9' not found |
 
 
 ## [Testing](#testing)
