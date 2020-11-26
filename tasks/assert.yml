@@ -1,4 +1,5 @@
 ---
+
 - name: test if atom_apm_packages is set correctly
   assert:
     that:
