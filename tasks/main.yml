@@ -20,10 +20,7 @@
     checksum: "{{ atom_checksum }}"
     validate_certs: no
   when:
-    - ansible_pkg_mgr == "apt" or
-      ansible_pkg_mgr == "dnf" or
-      ansible_pkg_mgr == "yum" or
-      ansible_pkg_mgr == "zypper"
+    - ansible_pkg_mgr in [ "apt", "dnf", "yum", "zypper" ]
 
 - name: install atom deb
   apt:
