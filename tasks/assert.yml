@@ -1,7 +1,7 @@
 ---
 
 - name: test if atom_apm_packages is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - atom_apm_packages is iterable
     quiet: yes
