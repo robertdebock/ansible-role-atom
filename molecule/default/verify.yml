@@ -6,4 +6,5 @@
 
   tasks:
     - name: check if atom exists works
-      command: file /usr/bin/atom
+      ansible.builtin.command:
+        cmd: file /usr/bin/atom
