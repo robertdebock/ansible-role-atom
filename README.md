@@ -84,16 +84,6 @@ The minimum version of Ansible required is 2.10, tests have been done to:
 - The current version.
 - The development version.
 
-## [Exceptions](#exceptions)
-
-Some roles can't run on a specific distribution or version. Here are some exceptions.
-
-| variation                 | reason                 |
-|---------------------------|------------------------|
-| amazonlinux:1 | Package: atom ... Requires: libsecret-1.so.0 ... and ... polkit |
-| debian:bullseye | An error occurred during the test sequence action: 'idempotence'. Cleaning up. |
-| centos:7 | /lib64/libstdc++.so.6: version `CXXABI_1.3.9' not found |
-
 
 If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-atom/issues)
 
